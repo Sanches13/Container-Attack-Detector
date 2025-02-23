@@ -1,0 +1,7 @@
+Event Write_syscall {
+	name: write
+	filename: example.txt
+}
+Rule Write_detection {
+	detect Write_syscall
+}

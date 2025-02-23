@@ -1,0 +1,21 @@
+[
+    {
+        "name": "rule1",
+        "subrules": [
+            {
+                "name": "subrule1",
+                "syscall": {
+                    "name": "write",
+                    "filename": "/host/proc/sys/kernel/core_pattern"
+                }
+            }
+        ],
+        "docker_config": {
+            "CapAdd": [],
+            "PidMode": "",
+            "Privileged": false,
+            "SecurityOpt": [],
+            "Mounts": []
+        }
+    }
+]

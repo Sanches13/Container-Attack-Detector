@@ -1,0 +1,21 @@
+Configuration DAC_READ_SEARCH_granted {
+	CapAdd: DAC_READ_SEARCH
+}
+Event open_by_handle_at_syscall {
+	name: open_by_handle_at
+	filename: /etc/hostname
+}
+Event read_syscall {
+	name: read
+	filename: /etc/hostname
+}
+Event getrandom_syscall {
+	name: getrandom
+}
+Event getdents64_syscall {
+	name: getdents64
+	filename: /etc/hostname
+}
+Rule DAC_READ_SEARCH_detection {
+	detect open_by_handle_at_syscall and read_syscall and getrandom_syscall and getdents64_syscall if DAC_READ_SEARCH_granted
+}
